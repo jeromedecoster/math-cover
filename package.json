@@ -1,8 +1,8 @@
 {
   "name": "math-cover",
   "version": "0.1.0",
-  "description": "math-cover",
-  "readme": "math-cover",
+  "description": "Calculates the size and the position of a target to fit a container, adjusted to keep a focus point",
+  "readme": "Calculates the size and the position of a target to fit a container, adjusted to keep a focus point",
   "repository": "jeromedecoster/math-cover",
   "main": "index.js",
   "files": [
@@ -22,7 +22,6 @@
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.9.11",
     "browserify": "^12.0.1",
