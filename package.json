@@ -1,12 +1,19 @@
 {
   "name": "math-cover",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Calculates the size and the position of a target to fit a container, adjusted to keep a focus point",
-  "readme": "Calculates the size and the position of a target to fit a container, adjusted to keep a focus point",
   "repository": "jeromedecoster/math-cover",
   "main": "index.js",
   "files": [
     "index.js"
+  ],
+  "keywords": [
+    "math",
+    "cover",
+    "fit",
+    "focus",
+    "focus point",
+    "image"
   ],
   "scripts": {
     "start": "browser-sync start --server public --no-ui --no-notify",
