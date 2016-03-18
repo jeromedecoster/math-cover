@@ -13,10 +13,12 @@ module.exports = function (target, parent) {
   var top  = (ph - th * scale) >> 1
   var width = tw * scale
   var height =  th * scale
+  var posx = '50%'
+  var posy = '50%'
 
   // focus x
-  if (target.x) {
-    left = -((width * (target.x / tw)) - pw + pw / 2)
+  if (target.x != undefined && target.x >= 0 && target.x <= 1) {
+    left = -(width * target.x - pw + pw / 2)
     // fix right border
     if (left + width < pw) {
       left = pw - width
@@ -25,11 +27,15 @@ module.exports = function (target, parent) {
     else if (left > 0) {
       left = 0
     }
+
+    if (-width + pw != 0) {
+      posx = (100 * left / (-width + pw)) + '%'
+    }
   }
 
   // focus y
-  if (target.y) {
-    top = -((height * (target.y / th)) - ph + ph / 2)
+  if (target.y && target.y >= 0 && target.y <= 1) {
+    top = -(height * target.y - ph + ph / 2)
     // fix bottom border
     if (top + height < ph) {
       top = ph - height
@@ -38,13 +44,18 @@ module.exports = function (target, parent) {
     else if (top > 0) {
       top = 0
     }
+
+    if (-height + ph != 0) {
+      posy = (100 * top / (-height + ph)) + '%'
+    }
   }
 
   return {
-    left: left,
-    top: top,
-    width: width,
-    height: height,
-    scale: scale
+        left: left,
+         top: top,
+       width: width,
+      height: height,
+       scale: scale,
+    position: posx + ' ' + posy
   }
 }

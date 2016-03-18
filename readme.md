@@ -7,7 +7,7 @@ A mix of <a href="https://github.com/jonom/jquery-focuspoint" target="_blank">jq
 ## Install
 
 ```bash
-npm i jeromedecoster/math-cover
+npm i math-cover
 ```
 
 ## Examples
@@ -26,11 +26,13 @@ var parent = {
   h: 200
 }
 
-// {left: -150, top: 0, width: 400, height: 200, scale: 2}
+// {left: -150, top: 0, width: 400, height: 200, scale: 2, position: '50% 50%'}
 var obj = cover(target, parent)
 ```
 
 #### With focus point
+
+Params `x` and `y` are ratio of `target.w` and `target.h` and must be `0 <= ratio <= 1`
 
 ```js
 var cover = require('math-cover')
@@ -38,19 +40,21 @@ var cover = require('math-cover')
 var target = {
   w: 200,
   h: 100,
-  x: 10,
-  y: 10
+  x: .2,
+  y: .2
 }
 var parent = {
   w: 100,
   h: 200
 }
 
-// {left: 0, top: 0, width: 400, height: 200, scale: 2}
+// {left: -30, top: 0, width: 400, height: 200, scale: 2, position: '10% 50%'}
 var obj = cover(target, parent)
 ```
 
 ## Demo
+
+<a href="http://jeromedecoster.github.io/math-cover" target="_blank">demo</a>
 
 ```bash
 npm i && npm start
@@ -60,7 +64,7 @@ npm i && npm start
 | :------ | :------- |
 | **w** | random width |
 | **h** | random height |
-| **r** | random width + height |
+| **u** | random width + height |
 | **i** | random image |
 | **d** or **space** | toggle debug |
 

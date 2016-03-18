@@ -11,16 +11,16 @@ body {
 }
 
 .debug-container,
-.debug-img {
+.debug-image {
   box-sizing: border-box;
   position: fixed;
   pointer-events: none;
 }
-.debug--enabled .debug-container {
+.debug-container {
   z-index: 1;
   border: 1px #f00 dashed;
 }
-.debug--enabled .debug-img {
+.debug-image {
   z-index: 2;
   border: 1px #00f dashed;
 }
@@ -30,21 +30,20 @@ body {
   user-select: none;
 }
 
-
 .container {
-  position:  relative;
+  position: relative;
   overflow: hidden;
 }
 .container img {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: absolute 0;
   margin: 0;
   display: block;
 
-  width: auto; height: auto;
+  width: auto;
+  height: auto;
   min-width: 100%;
   max-width: 100%;
-  max-height: none; max-width: none;
+  max-height: none;
+  max-width: none;
 }
 
